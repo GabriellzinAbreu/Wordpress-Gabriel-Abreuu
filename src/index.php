@@ -15,3 +15,12 @@ define( 'WP_USE_THEMES', true );
 
 /** Loads the WordPress Environment and Template */
 require __DIR__ . '/wp-blog-header.php';
+
+$mysqli = new mysqli("mysql", "lampuser", "lamppass", "lampdb");
+if ($mysqli->connect_errno) {
+ echo "Falha na conexao: " . $mysqli->connect_error;
+ exit();
+}
+echo "Conexao bem-sucedida!\n";
+phpinfo();
+
